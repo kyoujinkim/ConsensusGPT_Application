@@ -1,4 +1,5 @@
 from glob import glob
+from os.path import join
 
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
@@ -28,13 +29,11 @@ class mainWindow(QMainWindow):
         self.dbPath = None
         self.docs = None
 
-        self.hideFrame()
-
         self.load_config()
 
-        self.btn_Gen.clicked.connect(lambda: self.showFrame(self.fr_Gen))
-        self.btn_DB.clicked.connect(lambda: self.showFrame(self.fr_DB))
-        self.btn_Setting.clicked.connect(lambda: self.showFrame(self.fr_Setting))
+        self.btn_Gen_.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
+        self.btn_DB_.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+        self.btn_Setting_.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
 
         #btn_Help에 help.ui dialog를 띄움
         self.btn_Help.clicked.connect(lambda: help())
@@ -106,16 +105,6 @@ class mainWindow(QMainWindow):
         self.line_SaveLog.textChanged.connect(
             lambda: settings.setValue("LOG_SAVE_PATH", self.line_SaveLog.text())
         )
-
-    def hideFrame(self):
-        #set all frame unvisible
-        self.fr_Gen.setVisible(False)
-        self.fr_DB.setVisible(False)
-        self.fr_Setting.setVisible(False)
-
-    def showFrame(self, frame):
-        self.hideFrame()
-        frame.setVisible(True)
 
     def load_ui(self):
         self.ui = uic.loadUi('app.ui', self)
@@ -370,7 +359,7 @@ class mainWindow(QMainWindow):
         for i, file in enumerate(links):
             filename = file.split('/')[-1]
             # 파일확장자가 pdf가 아니면 continue
-            if filename.split('.')[-1] != 'pdf':
+            if filename.split('.')[-1] not in ['pdf','doc', 'docx', 'ppt', 'pptx', 'txt']:
                 continue
             filepath = file.replace(filename, '')
             self.table_pdf.insertRow(row_count + i)
@@ -398,10 +387,13 @@ class mainWindow(QMainWindow):
     def loadPDF(self):
         #pdfpath에 있는 pdf를 table_pdf에 출력
         pdfpath = self.line_pdfPath.text()
+        files = []
+        for ext in ('*.doc', '*.docx', '*.ppt', '*.pptx', '*.txt', '*.pdf'):
+            files.extend(glob(join(pdfpath, ext)))
 
         #table_pdf 안에 있는 row의 개수 count
         row_count = self.table_pdf.rowCount()
-        for i, file in enumerate(glob(f'{pdfpath}/*.pdf')):
+        for i, file in enumerate(files):
             filename = file.split('\\')[-1]
             filepath = file.replace(filename, '')
             self.table_pdf.insertRow(row_count + i)

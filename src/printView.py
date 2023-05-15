@@ -1,5 +1,7 @@
 from typing import List
 
+from langchain.document_loaders import Docx2txtLoader, UnstructuredPowerPointLoader, TextLoader
+from langchain.text_splitter import CharacterTextSplitter
 from tqdm import tqdm
 import os
 
@@ -71,17 +73,48 @@ class PrintAssetView:
         #embeddings = HuggingFaceEmbeddings(model_name=embeddingAi)
 
         if dbPath is not None and os.path.isdir(dbPath):
-            docsearch = Chroma(embedding_function = embeddings, persist_directory=dbPath+'/')
+            docsearch = Chroma(embedding_function=embeddings, persist_directory=dbPath+'/')
         else:
-            pdftexts = self.pr.getPDF(filelist=filelist)
+            listOfExt = list(set([file.split('.')[-1] for file in filelist]))
 
+            chunk_size = 500
             docs_split = []
-            for doc in tqdm(pdftexts, desc='PDF 세부분할'):
-                doc_split= self.pr.split_text(doc,
-                                      separator =docSeparator,
-                                      size      =docSize,
-                                      overlap   =docOverlap)
-                docs_split.extend(doc_split)
+            for ext in listOfExt:
+                split_filelist = [file for file in filelist if file.split('.')[-1] == ext]
+
+                if ext == 'pdf':
+                    pdftexts = self.pr.getPDF(filelist=split_filelist)
+
+
+                    for doc in tqdm(pdftexts, desc='PDF 세부분할'):
+                        doc_split= self.pr.split_text(doc,
+                                              separator =docSeparator,
+                                              size      =docSize,
+                                              overlap   =docOverlap)
+                        docs_split.extend(doc_split)
+                elif ext == 'doc' or ext == 'docx':
+                    for file in split_filelist:
+                        loader = Docx2txtLoader(file)
+                        data = loader.load_and_split(CharacterTextSplitter(
+                            chunk_size=chunk_size
+                        ))
+                        docs_split.extend(data)
+                elif ext == 'ppt' or ext == 'pptx':
+                    for file in split_filelist:
+                        loader = UnstructuredPowerPointLoader(file)
+                        data = loader.load_and_split(CharacterTextSplitter(
+                            chunk_size=chunk_size
+                        ))
+                        docs_split.extend(data)
+                elif ext == 'txt':
+                    for file in split_filelist:
+                        loader = TextLoader(file)
+                        data = loader.load_and_split(CharacterTextSplitter(
+                            chunk_size=chunk_size
+                        ))
+                        docs_split.extend(data)
+                else:
+                    continue
 
             if dbPath is None:
                 docsearch = Chroma.from_documents(docs_split, embeddings)

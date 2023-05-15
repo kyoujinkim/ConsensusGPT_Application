@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>632</width>
+    <height>397</height>
    </rect>
   </property>
   <property name="palette">
@@ -428,22 +428,16 @@
   <property name="windowTitle">
    <string>Help</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>361</width>
-     <height>181</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>제작자: 김규진
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>제작자: 김규진
 Email: kyoujin.kim@nhqv.com
 주소: github.com/kyoujinkim
 수정일자: 2023-05-11
@@ -455,8 +449,10 @@ Email: kyoujin.kim@nhqv.com
 
 사용 혹은 업데이트 관련 문의가 있으신 경우,
 위 이메일 또는 깃허브 주소로 컨택 부탁드립니다.</string>
-   </property>
-  </widget>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

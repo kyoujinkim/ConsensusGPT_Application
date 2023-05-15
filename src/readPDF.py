@@ -10,8 +10,6 @@ import datetime as dt
 import fitz
 from tqdm import tqdm
 
-#from langchain_light import Document
-
 class PDFReader:
     def __init__(self):
         self.nonNameList = "[<>?:|/\\*]"

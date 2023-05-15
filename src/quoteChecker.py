@@ -16,7 +16,8 @@ def print_quote(rearr_context_doc, docs, verbose:bool=True):
     txtNum = [x for x in txtNumStr if x.isdigit()]
     txtNum = int(''.join(txtNum))
     txtNumList.append(txtNum)
-  txtNumList = list(set(txtNumList)).sort()
+  txtNumList = list(set(txtNumList))
+  txtNumList.sort()
 
   '''주석 표시'''
   quoteList = []
@@ -25,7 +26,10 @@ def print_quote(rearr_context_doc, docs, verbose:bool=True):
     if txtNum > len(docs):
       continue
     doc = docs[txtNum-1]
-    quote = f"(*{txtNum}){unicodedata.normalize('NFC',doc.metadata['source'].replace('/',''))}. {int(doc.metadata['page'])+1}pg"
+    try:
+      quote = f"(*{txtNum}){unicodedata.normalize('NFC',doc.metadata['source'].replace('/',''))}. {int(doc.metadata['page'])+1}pg"
+    except:
+      quote = f"(*{txtNum}){unicodedata.normalize('NFC', doc.metadata['source'].replace('/', ''))}. 1pg"
     quoteList.append(quote)
 
   if verbose:
