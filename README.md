@@ -53,3 +53,7 @@ ConsensusGPT Application with GUI
 <br/><br/>
 - 컨센서스 생성 탭에서 작업 수행
 ![15](https://github.com/kyoujinkim/ConsensusGPT_Application/assets/89054575/cc099bef-8049-441c-814f-75b8d9d335c3)
+<br/><br/>
+
+## Documentation
+- 관련 보고서 및 내용은 [링크](https://github.com/kyoujinkim/NH_ConsensusGPT)에서 확인
