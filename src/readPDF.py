@@ -93,7 +93,7 @@ class PDFReader:
 
         return Docset
 
-    def split_text_byChunk(self, doc, chunk_size:int=500, size:int=500, overlap:int=100):
+    def split_text_byChunk(self, doc, chunk_size:int=500, overlap:int=100):
         text = doc.page_content
         text_list = RecursiveCharacterTextSplitter(chunk_overlap=overlap, chunk_size=chunk_size).split_text(text)
         doc_source_unicode = unicodedata.normalize('NFC', doc.metadata['source'])
