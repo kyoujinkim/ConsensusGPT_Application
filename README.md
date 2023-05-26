@@ -10,7 +10,7 @@ ConsensusGPT Application with GUI
 
 ## Installation and Running
 
-- [링크](https://drive.google.com/file/d/11mC6M9nio6dKyRdTOjbfWnPWXJVFS42j/view?usp=share_link)에서 모델 실행 Zip 파일 다운로드
+- [링크](https://drive.google.com/file/d/15BjRyNMPOZe3SWy5kWocMqq6IonziroY/view?usp=share_link)에서 모델 실행 Zip 파일 다운로드
 - OPENAI.COM 접속
 ![1](https://github.com/kyoujinkim/ConsensusGPT_Application/assets/89054575/81067fc7-b871-4c54-a299-c94305b41997)
 <br/><br/>
