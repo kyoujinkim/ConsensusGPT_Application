@@ -8,6 +8,7 @@ from langchain.docstore.document import Document
 import datetime as dt
 
 import fitz
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 from tqdm import tqdm
 
 class PDFReader:
@@ -92,26 +93,19 @@ class PDFReader:
 
         return Docset
 
-    def split_text(self, doc, separator:str='\n', size:int=2, overlap:int=0):
+    def split_text_byChunk(self, doc, chunk_size:int=500, size:int=500, overlap:int=100):
         text = doc.page_content
-        text_list = text.split(separator)
+        text_list = RecursiveCharacterTextSplitter(chunk_overlap=overlap, chunk_size=chunk_size).split_text(text)
         doc_source_unicode = unicodedata.normalize('NFC', doc.metadata['source'])
         if "[기업]" in doc_source_unicode:
             compname = doc_source_unicode.split("[기업]")[1].split(",")[0]
             text_list = [compname + ", " + x for x in text_list]
         doc_list = []
-        if size >= len(text_list):
+        for text in text_list:
             new_doc = Document(
                 page_content=text,
                 metadata={"source": doc.metadata['source'], "page": doc.metadata['page'], "date": doc.metadata['date']},
             )
             doc_list.append(new_doc)
-        else:
-            for text_num in range(size, len(text_list), size-overlap):
-                new_doc = Document(
-                    page_content='. '.join(text_list[text_num-size:text_num]),
-                    metadata={"source": doc.metadata['source'], "page": doc.metadata['page'], "date": doc.metadata['date']},
-                )
-                doc_list.append(new_doc)
 
         return doc_list

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1326</width>
-    <height>772</height>
+    <width>1172</width>
+    <height>759</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -433,21 +433,6 @@
     <bool>true</bool>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
-    <property name="spacing">
-     <number>0</number>
-    </property>
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="Layout_Main">
       <property name="spacing">
@@ -918,7 +903,7 @@ color: rgb(255, 255, 255);
 font: 14pt &quot;굴림&quot;;</string>
            </property>
            <property name="text">
-            <string>ConsensusGPT v1.0</string>
+            <string>ConsensusGPT v1.01</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
@@ -1696,7 +1681,7 @@ font: 10pt &quot;굴림&quot;;</string>
                </sizepolicy>
               </property>
               <property name="currentIndex">
-               <number>2</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="fr_Gen">
                <property name="layoutDirection">
@@ -1896,109 +1881,7 @@ font: 10pt &quot;굴림&quot;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="9">
-                 <widget class="QLabel" name="text_DBStatus">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>300</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>... </string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="12">
-                 <widget class="QToolButton" name="btn_LoadPDF">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(55, 55, 55);
-color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;;</string>
-                  </property>
-                  <property name="text">
-                   <string>Load PDF</string>
-                  </property>
-                  <property name="shortcut">
-                   <string/>
-                  </property>
-                  <property name="popupMode">
-                   <enum>QToolButton::InstantPopup</enum>
-                  </property>
-                  <property name="toolButtonStyle">
-                   <enum>Qt::ToolButtonIconOnly</enum>
-                  </property>
-                  <property name="autoRaise">
-                   <bool>true</bool>
-                  </property>
-                  <property name="arrowType">
-                   <enum>Qt::NoArrow</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="11">
-                 <widget class="QPushButton" name="help_pdfPath">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>2</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>22</width>
-                    <height>22</height>
-                   </size>
-                  </property>
-                  <property name="toolTip">
-                   <string/>
-                  </property>
-                  <property name="toolTipDuration">
-                   <number>0</number>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                  </property>
-                  <property name="text">
-                   <string>?</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="0" colspan="13">
+                <item row="4" column="0" colspan="6">
                  <widget class="QTableWidget" name="table_pdf">
                   <property name="maximumSize">
                    <size>
@@ -2076,226 +1959,116 @@ color:white;
                   </attribute>
                  </widget>
                 </item>
-                <item row="5" column="0" colspan="13">
+                <item row="2" column="4">
+                 <widget class="QPushButton" name="help_pdfPath">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>2</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>22</width>
+                    <height>22</height>
+                   </size>
+                  </property>
+                  <property name="toolTip">
+                   <string/>
+                  </property>
+                  <property name="toolTipDuration">
+                   <number>0</number>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    border-style: outset;
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #888
+        );
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }</string>
+                  </property>
+                  <property name="text">
+                   <string>?</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="5" column="0" colspan="6">
                  <widget class="Line" name="line_8">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="1" colspan="2">
-                 <widget class="QSlider" name="slider_chunkSize">
-                  <property name="maximumSize">
-                   <size>
-                    <width>150</width>
-                    <height>16777215</height>
-                   </size>
+                <item row="2" column="5">
+                 <widget class="QToolButton" name="btn_LoadPDF">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(55, 55, 55);
+color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;;</string>
                   </property>
-                  <property name="minimum">
-                   <number>1</number>
+                  <property name="text">
+                   <string>Load PDF</string>
                   </property>
-                  <property name="maximum">
-                   <number>5</number>
+                  <property name="shortcut">
+                   <string/>
                   </property>
-                  <property name="pageStep">
-                   <number>1</number>
+                  <property name="popupMode">
+                   <enum>QToolButton::InstantPopup</enum>
                   </property>
-                  <property name="value">
-                   <number>2</number>
+                  <property name="toolButtonStyle">
+                   <enum>Qt::ToolButtonIconOnly</enum>
                   </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
+                  <property name="autoRaise">
+                   <bool>true</bool>
                   </property>
-                  <property name="tickPosition">
-                   <enum>QSlider::TicksBelow</enum>
-                  </property>
-                  <property name="tickInterval">
-                   <number>1</number>
+                  <property name="arrowType">
+                   <enum>Qt::NoArrow</enum>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="5">
-                 <widget class="QLabel" name="label_overlapSize">
+                <item row="6" column="2">
+                 <widget class="QLabel" name="text_DBStatus">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                  </property>
-                  <property name="text">
-                   <string>겹문장 단위(문장) :</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="6">
-                 <widget class="QSlider" name="slider_overlapSize">
                   <property name="maximumSize">
                    <size>
-                    <width>150</width>
+                    <width>300</width>
                     <height>16777215</height>
                    </size>
                   </property>
-                  <property name="maximum">
-                   <number>4</number>
-                  </property>
-                  <property name="pageStep">
-                   <number>1</number>
-                  </property>
-                  <property name="value">
-                   <number>0</number>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="tickPosition">
-                   <enum>QSlider::TicksBelow</enum>
-                  </property>
-                  <property name="tickInterval">
-                   <number>1</number>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="0">
-                 <widget class="QLabel" name="label_chunkSize">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                  </property>
                   <property name="text">
-                   <string>문서분할 단위(문장) :</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="7">
-                 <widget class="QLineEdit" name="line_overlapSize">
-                  <property name="maximumSize">
-                   <size>
-                    <width>30</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(3, 3, 3)</string>
-                  </property>
-                  <property name="inputMethodHints">
-                   <set>Qt::ImhDigitsOnly</set>
-                  </property>
-                  <property name="text">
-                   <string>0</string>
+                   <string>... </string>
                   </property>
                   <property name="alignment">
-                   <set>Qt::AlignCenter</set>
+                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="8">
-                 <widget class="QPushButton" name="help_overlapSize">
-                  <property name="maximumSize">
-                   <size>
-                    <width>22</width>
-                    <height>22</height>
-                   </size>
-                  </property>
-                  <property name="toolTip">
-                   <string/>
-                  </property>
-                  <property name="toolTipDuration">
-                   <number>0</number>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                  </property>
-                  <property name="text">
-                   <string>?</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="6" column="4">
-                 <widget class="QPushButton" name="help_chunkSize">
-                  <property name="maximumSize">
-                   <size>
-                    <width>22</width>
-                    <height>22</height>
-                   </size>
-                  </property>
-                  <property name="toolTip">
-                   <string/>
-                  </property>
-                  <property name="toolTipDuration">
-                   <number>0</number>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                  </property>
-                  <property name="text">
-                   <string>?</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="12">
+                <item row="0" column="5">
                  <widget class="QToolButton" name="toolButton_pdfPath">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2338,29 +2111,7 @@ QPushButton:pressed {
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="3">
-                 <widget class="QLineEdit" name="line_chunkSize">
-                  <property name="maximumSize">
-                   <size>
-                    <width>30</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(0,0,0)</string>
-                  </property>
-                  <property name="inputMethodHints">
-                   <set>Qt::ImhDigitsOnly</set>
-                  </property>
-                  <property name="text">
-                   <string>2</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2" colspan="10">
+                <item row="0" column="1" colspan="4">
                  <widget class="QLineEdit" name="line_pdfPath">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(100, 100, 100);
@@ -2375,7 +2126,7 @@ font: 9pt &quot;굴림&quot;;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="6" column="10" colspan="3">
+                <item row="6" column="3" colspan="3">
                  <widget class="QToolButton" name="btn_genDB">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -2415,8 +2166,603 @@ font: 10pt &quot;굴림&quot;;</string>
                 <bool>true</bool>
                </property>
                <layout class="QGridLayout" name="gridLayout_4">
+                <item row="1" column="0">
+                 <widget class="QFrame" name="frame_numEvid">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_5">
+                   <item row="2" column="2" colspan="2">
+                    <widget class="QLabel" name="label_maxEvid">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                     </property>
+                     <property name="text">
+                      <string>30개</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QPushButton" name="help_numEvid">
+                     <property name="maximumSize">
+                      <size>
+                       <width>22</width>
+                       <height>22</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string/>
+                     </property>
+                     <property name="toolTipDuration">
+                      <number>0</number>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    border-style: outset;
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #888
+        );
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }</string>
+                     </property>
+                     <property name="text">
+                      <string>?</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_minEvid">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                     </property>
+                     <property name="text">
+                      <string>1개</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLineEdit" name="line_evid">
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(0,0,0)</string>
+                     </property>
+                     <property name="inputMethodHints">
+                      <set>Qt::ImhDigitsOnly</set>
+                     </property>
+                     <property name="text">
+                      <string>10</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_numEvid">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                     </property>
+                     <property name="text">
+                      <string>근거의 개수</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0" colspan="4">
+                    <widget class="QSlider" name="slider_evid">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>0</number>
+                     </property>
+                     <property name="maximum">
+                      <number>30</number>
+                     </property>
+                     <property name="pageStep">
+                      <number>3</number>
+                     </property>
+                     <property name="value">
+                      <number>10</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="tickPosition">
+                      <enum>QSlider::TicksBelow</enum>
+                     </property>
+                     <property name="tickInterval">
+                      <number>1</number>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="4" column="0" colspan="2">
+                 <widget class="QFrame" name="frame_dial">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3">
+                   <item>
+                    <widget class="QFrame" name="frame_eivd">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_7">
+                      <item row="0" column="3">
+                       <widget class="QPushButton" name="help_evidF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>22</width>
+                          <height>22</height>
+                         </size>
+                        </property>
+                        <property name="toolTip">
+                         <string/>
+                        </property>
+                        <property name="toolTipDuration">
+                         <number>0</number>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    border-style: outset;
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #888
+        );
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }</string>
+                        </property>
+                        <property name="text">
+                         <string>?</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0" colspan="3">
+                       <widget class="QLabel" name="label_evidF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>근거 추출 자유도</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0" colspan="4">
+                       <widget class="QDial" name="dial_evid">
+                        <property name="maximum">
+                         <number>100</number>
+                        </property>
+                        <property name="sliderPosition">
+                         <number>0</number>
+                        </property>
+                        <property name="wrapping">
+                         <bool>false</bool>
+                        </property>
+                        <property name="notchTarget">
+                         <double>10.000000000000000</double>
+                        </property>
+                        <property name="notchesVisible">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_minEvidF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>0%</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QLineEdit" name="line_evidF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(0,0,0)</string>
+                        </property>
+                        <property name="inputMethodHints">
+                         <set>Qt::ImhDigitsOnly</set>
+                        </property>
+                        <property name="text">
+                         <string>0</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="2" colspan="2">
+                       <widget class="QLabel" name="label_maxEvidF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>100%</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="frame_filter">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_8">
+                      <item row="0" column="0" colspan="3">
+                       <widget class="QLabel" name="label_filterF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>근거 필터 자유도</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="3">
+                       <widget class="QPushButton" name="help_filterF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>22</width>
+                          <height>22</height>
+                         </size>
+                        </property>
+                        <property name="toolTip">
+                         <string/>
+                        </property>
+                        <property name="toolTipDuration">
+                         <number>0</number>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    border-style: outset;
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #888
+        );
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }</string>
+                        </property>
+                        <property name="text">
+                         <string>?</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0" colspan="3">
+                       <widget class="QDial" name="dial_filter">
+                        <property name="maximum">
+                         <number>100</number>
+                        </property>
+                        <property name="value">
+                         <number>50</number>
+                        </property>
+                        <property name="notchTarget">
+                         <double>10.000000000000000</double>
+                        </property>
+                        <property name="notchesVisible">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_minFilterF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>0%</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="1">
+                       <widget class="QLineEdit" name="line_filterF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(0,0,0)</string>
+                        </property>
+                        <property name="inputMethodHints">
+                         <set>Qt::ImhDigitsOnly</set>
+                        </property>
+                        <property name="text">
+                         <string>50</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="2" colspan="2">
+                       <widget class="QLabel" name="label_maxFilterF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>100%</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="frame_conc">
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_9">
+                      <item row="0" column="0" colspan="4">
+                       <widget class="QLabel" name="label_concF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>결론 출력 자유도</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0" colspan="4">
+                       <widget class="QDial" name="dial_conc">
+                        <property name="maximum">
+                         <number>100</number>
+                        </property>
+                        <property name="value">
+                         <number>100</number>
+                        </property>
+                        <property name="notchTarget">
+                         <double>10.000000000000000</double>
+                        </property>
+                        <property name="notchesVisible">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="4">
+                       <widget class="QPushButton" name="help_concF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>22</width>
+                          <height>22</height>
+                         </size>
+                        </property>
+                        <property name="toolTip">
+                         <string/>
+                        </property>
+                        <property name="toolTipDuration">
+                         <number>0</number>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+    color: #333;
+    border: 2px solid #555;
+    border-radius: 10px;
+    border-style: outset;
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #888
+        );
+    padding: 5px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
+        );
+    }
+
+QPushButton:pressed {
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
+        );
+    }</string>
+                        </property>
+                        <property name="text">
+                         <string>?</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="2">
+                       <widget class="QLineEdit" name="line_concF">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(0,0,0)</string>
+                        </property>
+                        <property name="inputMethodHints">
+                         <set>Qt::ImhDigitsOnly</set>
+                        </property>
+                        <property name="text">
+                         <string>100</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_minConcF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>0%</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="4">
+                       <widget class="QLabel" name="label_maxConcF">
+                        <property name="styleSheet">
+                         <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                        </property>
+                        <property name="text">
+                         <string>100%</string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                 <item row="0" column="0" colspan="2">
-                 <widget class="QFrame" name="frame">
+                 <widget class="QFrame" name="frame_key">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>16777215</width>
@@ -2579,92 +2925,65 @@ QPushButton:pressed {
                   </layout>
                  </widget>
                 </item>
-                <item row="1" column="0">
-                 <widget class="QFrame" name="frame_2">
+                <item row="2" column="0">
+                 <widget class="QFrame" name="frame_chunkSize">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_5">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="label_numEvid">
+                  <layout class="QGridLayout" name="gridLayout_10">
+                   <item row="2" column="2" colspan="2">
+                    <widget class="QLabel" name="label_maxChunk">
                      <property name="styleSheet">
                       <string notr="true">color: rgb(255, 255, 255);
 font: 10pt &quot;굴림&quot;</string>
                      </property>
                      <property name="text">
-                      <string>근거의 개수</string>
+                      <string>2000 Chunk</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_chunkSize">
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(255, 255, 255);
+font: 10pt &quot;굴림&quot;</string>
+                     </property>
+                     <property name="text">
+                      <string>세부문서 Chunk 사이즈(단어 개수)</string>
                      </property>
                     </widget>
                    </item>
                    <item row="2" column="0">
-                    <widget class="QLabel" name="label_minEvid">
+                    <widget class="QLabel" name="label_minChunk">
                      <property name="styleSheet">
                       <string notr="true">color: rgb(255, 255, 255);
 font: 10pt &quot;굴림&quot;</string>
                      </property>
                      <property name="text">
-                      <string>0개</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="3">
-                    <widget class="QPushButton" name="help_numEvid">
-                     <property name="maximumSize">
-                      <size>
-                       <width>22</width>
-                       <height>22</height>
-                      </size>
-                     </property>
-                     <property name="toolTip">
-                      <string/>
-                     </property>
-                     <property name="toolTipDuration">
-                      <number>0</number>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                     </property>
-                     <property name="text">
-                      <string>?</string>
+                      <string>100 Chunk</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="0" colspan="4">
-                    <widget class="QSlider" name="slider_evid">
+                    <widget class="QSlider" name="slider_chunkSize">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                        <horstretch>0</horstretch>
@@ -2672,16 +2991,19 @@ QPushButton:pressed {
                       </sizepolicy>
                      </property>
                      <property name="minimum">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
                      <property name="maximum">
-                      <number>15</number>
+                      <number>2000</number>
+                     </property>
+                     <property name="singleStep">
+                      <number>100</number>
                      </property>
                      <property name="pageStep">
-                      <number>3</number>
+                      <number>500</number>
                      </property>
                      <property name="value">
-                      <number>10</number>
+                      <number>100</number>
                      </property>
                      <property name="orientation">
                       <enum>Qt::Horizontal</enum>
@@ -2690,12 +3012,12 @@ QPushButton:pressed {
                       <enum>QSlider::TicksBelow</enum>
                      </property>
                      <property name="tickInterval">
-                      <number>1</number>
+                      <number>100</number>
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="3">
-                    <widget class="QPushButton" name="help_numCalc">
+                   <item row="0" column="3">
+                    <widget class="QPushButton" name="help_chunkSize">
                      <property name="maximumSize">
                       <size>
                        <width>22</width>
@@ -2741,222 +3063,8 @@ QPushButton:pressed {
                      </property>
                     </widget>
                    </item>
-                   <item row="5" column="0">
-                    <widget class="QLabel" name="label_minCalc">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>0개</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="1">
-                    <widget class="QLineEdit" name="line_calc">
-                     <property name="maximumSize">
-                      <size>
-                       <width>30</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(0,0,0)</string>
-                     </property>
-                     <property name="inputMethodHints">
-                      <set>Qt::ImhDigitsOnly</set>
-                     </property>
-                     <property name="text">
-                      <string>5</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="3" column="0" colspan="3">
-                    <widget class="QLabel" name="label_numCalc">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>요청당 처리 근거 개수</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="4" column="0" colspan="4">
-                    <widget class="QSlider" name="slider_calc">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="minimum">
-                      <number>1</number>
-                     </property>
-                     <property name="maximum">
-                      <number>5</number>
-                     </property>
-                     <property name="pageStep">
-                      <number>3</number>
-                     </property>
-                     <property name="value">
-                      <number>5</number>
-                     </property>
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="tickPosition">
-                      <enum>QSlider::TicksBelow</enum>
-                     </property>
-                     <property name="tickInterval">
-                      <number>1</number>
-                     </property>
-                    </widget>
-                   </item>
                    <item row="2" column="1">
-                    <widget class="QLineEdit" name="line_evid">
-                     <property name="maximumSize">
-                      <size>
-                       <width>30</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(0,0,0)</string>
-                     </property>
-                     <property name="inputMethodHints">
-                      <set>Qt::ImhDigitsOnly</set>
-                     </property>
-                     <property name="text">
-                      <string>10</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="2" colspan="2">
-                    <widget class="QLabel" name="label_maxEvid">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>15개</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="5" column="2" colspan="2">
-                    <widget class="QLabel" name="label_maxCalc">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>5개</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QFrame" name="frame_3">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_7">
-                   <item row="2" column="6">
-                    <widget class="QLabel" name="label_minFilterF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>0%</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="1">
-                    <widget class="QLabel" name="label_minEvidF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>0%</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="0" colspan="5">
-                    <widget class="QDial" name="dial_evid">
-                     <property name="maximum">
-                      <number>100</number>
-                     </property>
-                     <property name="sliderPosition">
-                      <number>0</number>
-                     </property>
-                     <property name="wrapping">
-                      <bool>false</bool>
-                     </property>
-                     <property name="notchTarget">
-                      <double>10.000000000000000</double>
-                     </property>
-                     <property name="notchesVisible">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="5" colspan="5">
-                    <widget class="QDial" name="dial_filter">
-                     <property name="maximum">
-                      <number>100</number>
-                     </property>
-                     <property name="value">
-                      <number>50</number>
-                     </property>
-                     <property name="notchTarget">
-                      <double>10.000000000000000</double>
-                     </property>
-                     <property name="notchesVisible">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="10" colspan="4">
-                    <widget class="QLabel" name="label_concF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>결론 출력 자유도</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="2">
-                    <widget class="QLineEdit" name="line_evidF">
+                    <widget class="QLineEdit" name="line_chunkSize">
                      <property name="maximumSize">
                       <size>
                        <width>50</width>
@@ -2970,153 +3078,53 @@ font: 10pt &quot;굴림&quot;</string>
                       <set>Qt::ImhDigitsOnly</set>
                      </property>
                      <property name="text">
-                      <string>0</string>
+                      <string>500</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
                      </property>
                     </widget>
                    </item>
-                   <item row="0" column="14">
-                    <widget class="QPushButton" name="help_concF">
-                     <property name="maximumSize">
-                      <size>
-                       <width>22</width>
-                       <height>22</height>
-                      </size>
-                     </property>
-                     <property name="toolTip">
-                      <string/>
-                     </property>
-                     <property name="toolTipDuration">
-                      <number>0</number>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                     </property>
-                     <property name="text">
-                      <string>?</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="10" colspan="5">
-                    <widget class="QDial" name="dial_conc">
-                     <property name="maximum">
-                      <number>100</number>
-                     </property>
-                     <property name="value">
-                      <number>100</number>
-                     </property>
-                     <property name="notchTarget">
-                      <double>10.000000000000000</double>
-                     </property>
-                     <property name="notchesVisible">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="9">
-                    <widget class="QPushButton" name="help_filterF">
-                     <property name="maximumSize">
-                      <size>
-                       <width>22</width>
-                       <height>22</height>
-                      </size>
-                     </property>
-                     <property name="toolTip">
-                      <string/>
-                     </property>
-                     <property name="toolTipDuration">
-                      <number>0</number>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton {
-    color: #333;
-    border: 2px solid #555;
-    border-radius: 10px;
-    border-style: outset;
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #888
-        );
-    padding: 5px;
-    }
-
-QPushButton:hover {
-    background: qradialgradient(
-        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
-        radius: 1.35, stop: 0 #fff, stop: 1 #bbb
-        );
-    }
-
-QPushButton:pressed {
-    border-style: inset;
-    background: qradialgradient(
-        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
-        radius: 1.35, stop: 0 #fff, stop: 1 #ddd
-        );
-    }</string>
-                     </property>
-                     <property name="text">
-                      <string>?</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="0" colspan="4">
-                    <widget class="QLabel" name="label_evidF">
+                  </layout>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QFrame" name="frame_overlap">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_11">
+                   <item row="2" column="2" colspan="2">
+                    <widget class="QLabel" name="label_maxOverlap">
                      <property name="styleSheet">
                       <string notr="true">color: rgb(255, 255, 255);
 font: 10pt &quot;굴림&quot;</string>
                      </property>
                      <property name="text">
-                      <string>근거 추출 자유도</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="3" colspan="2">
-                    <widget class="QLabel" name="label_maxEvidF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>100%</string>
+                      <string>500 Chunk</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                      </property>
                     </widget>
                    </item>
-                   <item row="0" column="4">
-                    <widget class="QPushButton" name="help_evidF">
+                   <item row="0" column="3">
+                    <widget class="QPushButton" name="help_overlapSize">
                      <property name="maximumSize">
                       <size>
                        <width>22</width>
@@ -3162,22 +3170,53 @@ QPushButton:pressed {
                      </property>
                     </widget>
                    </item>
-                   <item row="0" column="5" colspan="4">
-                    <widget class="QLabel" name="label_filterF">
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_minOverlap">
                      <property name="styleSheet">
                       <string notr="true">color: rgb(255, 255, 255);
 font: 10pt &quot;굴림&quot;</string>
                      </property>
                      <property name="text">
-                      <string>근거 필터 자유도</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                      <string>0 Chunk</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="12">
-                    <widget class="QLineEdit" name="line_concF">
+                   <item row="1" column="0" colspan="4">
+                    <widget class="QSlider" name="slider_overlapSize">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimum">
+                      <number>0</number>
+                     </property>
+                     <property name="maximum">
+                      <number>500</number>
+                     </property>
+                     <property name="singleStep">
+                      <number>100</number>
+                     </property>
+                     <property name="pageStep">
+                      <number>50</number>
+                     </property>
+                     <property name="value">
+                      <number>100</number>
+                     </property>
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="tickPosition">
+                      <enum>QSlider::TicksBelow</enum>
+                     </property>
+                     <property name="tickInterval">
+                      <number>50</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLineEdit" name="line_overlapSize">
                      <property name="maximumSize">
                       <size>
                        <width>50</width>
@@ -3198,64 +3237,14 @@ font: 10pt &quot;굴림&quot;</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="13" colspan="2">
-                    <widget class="QLabel" name="label_maxConcF">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_overlapSize">
                      <property name="styleSheet">
                       <string notr="true">color: rgb(255, 255, 255);
 font: 10pt &quot;굴림&quot;</string>
                      </property>
                      <property name="text">
-                      <string>100%</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="7">
-                    <widget class="QLineEdit" name="line_filterF">
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(0,0,0)</string>
-                     </property>
-                     <property name="inputMethodHints">
-                      <set>Qt::ImhDigitsOnly</set>
-                     </property>
-                     <property name="text">
-                      <string>50</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="8" colspan="2">
-                    <widget class="QLabel" name="label_maxFilterF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>100%</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="2" column="11">
-                    <widget class="QLabel" name="label_minConcF">
-                     <property name="styleSheet">
-                      <string notr="true">color: rgb(255, 255, 255);
-font: 10pt &quot;굴림&quot;</string>
-                     </property>
-                     <property name="text">
-                      <string>0%</string>
+                      <string>세부문서 Chunk 오버랩 사이즈</string>
                      </property>
                     </widget>
                    </item>

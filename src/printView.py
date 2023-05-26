@@ -1,5 +1,6 @@
 from typing import List
 
+import tiktoken
 from langchain.document_loaders import Docx2txtLoader, UnstructuredPowerPointLoader, TextLoader
 from langchain.text_splitter import CharacterTextSplitter
 from tqdm import tqdm
@@ -27,6 +28,8 @@ class PrintAssetView:
                  ):
         self.pr = PDFReader()
         self.templates = loadTemplate()
+        #tokenizer = tiktoken.get_encoding("cl100k_base")
+        self.tokenizer = tiktoken.encoding_for_model(llmAiEngine)  # "gpt-4"도 가능
 
         self.PROMPT = PromptTemplate(template=self.templates['template'], input_variables=["summaries", "question"])
         self.PROMPT_S = PromptTemplate(template=self.templates['template_s'], input_variables=["summaries", "question"])
@@ -51,9 +54,8 @@ class PrintAssetView:
             filelist      :List                                  ,
             dbPath        :str  =None                           ,
             #embeddingAi   :str  ='BM-K/KoSimCSE-bert-multitask' ,
-            docSeparator  :str  ='. '                           ,
-            docSize       :int  =2                              ,
-            docOverlap    :int  =0                              ,
+            docSize       :int  =500                              ,
+            docOverlap    :int  =100                              ,
             ):
         '''
         기본 세팅을 위한 전처리 프로세스
@@ -77,7 +79,6 @@ class PrintAssetView:
         else:
             listOfExt = list(set([file.split('.')[-1] for file in filelist]))
 
-            chunk_size = 500
             docs_split = []
             for ext in listOfExt:
                 split_filelist = [file for file in filelist if file.split('.')[-1] == ext]
@@ -87,30 +88,38 @@ class PrintAssetView:
 
 
                     for doc in tqdm(pdftexts, desc='PDF 세부분할'):
+                        doc_split = self.pr.split_text_byChunk(doc,
+                                                              chunk_size=docSize,
+                                                              overlap=docOverlap)
+                        '''
                         doc_split= self.pr.split_text(doc,
                                               separator =docSeparator,
                                               size      =docSize,
                                               overlap   =docOverlap)
+                        '''
                         docs_split.extend(doc_split)
                 elif ext == 'doc' or ext == 'docx':
                     for file in split_filelist:
                         loader = Docx2txtLoader(file)
                         data = loader.load_and_split(CharacterTextSplitter(
-                            chunk_size=chunk_size
+                            chunk_size=docSize,
+                            overlap = docOverlap
                         ))
                         docs_split.extend(data)
                 elif ext == 'ppt' or ext == 'pptx':
                     for file in split_filelist:
                         loader = UnstructuredPowerPointLoader(file)
                         data = loader.load_and_split(CharacterTextSplitter(
-                            chunk_size=chunk_size
+                            chunk_size=docSize,
+                            overlap = docOverlap
                         ))
                         docs_split.extend(data)
                 elif ext == 'txt':
                     for file in split_filelist:
                         loader = TextLoader(file)
                         data = loader.load_and_split(CharacterTextSplitter(
-                            chunk_size=chunk_size
+                            chunk_size=docSize,
+                            overlap = docOverlap
                         ))
                         docs_split.extend(data)
                 else:
@@ -144,7 +153,6 @@ class PrintAssetView:
             self,
             query: str,
             docs,
-            iterNum: int = 5,
     ):
         '''
         쿼리에 대한 근거를 생성하는 텍스트 컨센서스 생성 프로세스
@@ -156,11 +164,41 @@ class PrintAssetView:
 
         '''근거 목록 저장'''
         context_doc = []
-        for idx in range(0, int(len(docs) / iterNum)):
-            summed_docs_part = docs[idx * iterNum:(idx + 1) * iterNum]
-        output = self.chain({"input_documents": summed_docs_part, "question": query}, return_only_outputs=True)
-        output['output_text'] = change_quote_num(output['output_text'], idx * iterNum)
-        context_doc.append(Document(page_content=output['output_text'], metadata={"source": ''}))
+        token_count = 0
+
+        summ_docs_part = []
+        doc_offset = 0
+        doc_count = 0
+        token_sub_count = 0
+        for doc in docs:
+            summ_docs_part.append(doc)
+            doc_count += 1
+            token_sub_count += len(self.tokenizer.encode(doc.page_content))
+
+            '''요약하기 원하는 문서 토큰의 개수가 2048개 이상인 경우에만, 요약을 수행. 그 외에는 문서 모으는 작업만 수행'''
+            if token_sub_count < 2048:
+                pass
+            else:
+                output = self.chain({"input_documents": summ_docs_part, "question": query}, return_only_outputs=True)
+                output['output_text'] = change_quote_num(output['output_text'], doc_offset)
+
+                summ_docs_part = []
+                doc_offset += doc_count
+                doc_count = 0
+                token_sub_count = 0
+
+                '''요약을 완료한 문서의 토큰 개수가 2048개 이상인 경우에는 작업을 완전 중지'''
+                context_doc.append(Document(page_content=output['output_text'], metadata={"source": ''}))
+                token_count += len(self.tokenizer.encode(output['output_text']))
+                if token_count >= 2048:
+                    break
+
+        '''작업을 완료한 이후, token count 조건이 충족되지 않았다면, 마지막으로 남은 문서를 요약하기 위해 추가 작업 수행'''
+        if token_count == 0:
+            output = self.chain({"input_documents": summ_docs_part, "question": query}, return_only_outputs=True)
+            output['output_text'] = change_quote_num(output['output_text'], doc_offset)
+
+            context_doc.append(Document(page_content=output['output_text'], metadata={"source": ''}))
 
         return context_doc
 

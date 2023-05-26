@@ -49,7 +49,6 @@ class mainWindow(QMainWindow):
         self.line_key.setText(settings.value("OPENAI_API_KEY", ""))
         self.line_openaiM.setText(settings.value("GENERATOR_AI", ""))
         self.line_evid.setText(settings.value("NUM_EVIDENCE", ""))
-        self.line_calc.setText(settings.value("NUM_EVIDENCE_PROC", ""))
         self.line_evidF.setText(settings.value("TEMP_EVIDENCE", ""))
         self.line_filterF.setText(settings.value("TEMP_FILTER", ""))
         self.line_concF.setText(settings.value("TEMP_CONCLUSION", ""))
@@ -72,10 +71,6 @@ class mainWindow(QMainWindow):
         #line_evid에 값이 바뀌면 config.ini 파일에 저장
         self.line_evid.textChanged.connect(
             lambda: settings.setValue("NUM_EVIDENCE", self.line_evid.text())
-        )
-        #line_calc에 값이 바뀌면 config.ini 파일에 저장
-        self.line_calc.textChanged.connect(
-            lambda: settings.setValue("NUM_EVIDENCE_PROC", self.line_calc.text())
         )
         #line_evidF에 값이 바뀌면 config.ini 파일에 저장
         self.line_evidF.textChanged.connect(
@@ -162,7 +157,6 @@ class mainWindow(QMainWindow):
         evidence = self.psv.printEvidence(
             query=query,
             docs=self.docs,
-            iterNum=int(self.slider_calc.value()),
         )
 
         self.evidence = evidence
@@ -427,7 +421,6 @@ class mainWindow(QMainWindow):
             apiKey=self.line_key.text(),
             filelist=filelist,
             dbPath=self.dbPath,
-            docSeparator='. ',
             docSize=self.slider_chunkSize.value(),
             docOverlap=self.slider_overlapSize.value(),
         )
@@ -479,18 +472,6 @@ class mainWindow(QMainWindow):
         #help_numEvid tooltip 작성
         self.help_numEvid.setToolTip(
             '''컨센서스를 생성할 때 사용한 세부문서의 개수를 선택하세요.'''
-        )
-
-        #slider_calc와 line_calc의 값 연동
-        self.slider_calc.valueChanged.connect(
-            lambda: self.line_calc.setText(str(self.slider_calc.value()))
-        )
-        self.line_calc.textChanged.connect(
-            lambda: self.slider_calc.setValue(int(self.line_calc.text()))
-        )
-        #help_numCalc tooltip 작성
-        self.help_numCalc.setToolTip(
-            '''OpenAI API를 한번 호출할 때, 처리할 근거의 개수를 입력하세요.\n토큰의 개수 제한으로 5개 이하가 추천됩니다.\n총 근거의 개수를 나눠서 0으로 만드는 것이 좋습니다.'''
         )
 
         #dial_evid와 line_evidF의 값 연동
